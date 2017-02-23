@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="システム">
+      <UniqueIdentifier>{5fe49638-18e5-49ea-a118-3e198fa521c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="システム\エージェント">
+      <UniqueIdentifier>{e11866e6-0e4d-4266-8b55-27faad146d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="システム\オセロ">
+      <UniqueIdentifier>{89293a9a-2a2a-4b35-b385-211c98c10014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="システム\ボード">
+      <UniqueIdentifier>{01197cfa-add0-4c1f-813c-cdb082aefde4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="システム\状態">
+      <UniqueIdentifier>{f9e1fce8-8440-4e7c-90f5-01d4d6d75ca2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Hash.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAgent.h">
+      <Filter>システム\エージェント</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardClass.h">
+      <Filter>システム\ボード</Filter>
+    </ClInclude>
+    <ClInclude Include="OseloClass.h">
+      <Filter>システム\オセロ</Filter>
+    </ClInclude>
+    <ClInclude Include="OseloSystem.h">
+      <Filter>システム\オセロ</Filter>
+    </ClInclude>
+    <ClInclude Include="PutState.h">
+      <Filter>システム\状態</Filter>
+    </ClInclude>
+    <ClInclude Include="QAgent.h">
+      <Filter>システム\エージェント</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomAgent.h">
+      <Filter>システム\エージェント</Filter>
+    </ClInclude>
+    <ClInclude Include="UserAgent.h">
+      <Filter>システム\エージェント</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseAgent.cpp">
+      <Filter>システム\エージェント</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardGet.cpp">
+      <Filter>システム\ボード</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardInit.cpp">
+      <Filter>システム\ボード</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardPut.cpp">
+      <Filter>システム\ボード</Filter>
+    </ClCompile>
+    <ClCompile Include="OseloCheck.cpp">
+      <Filter>システム\オセロ</Filter>
+    </ClCompile>
+    <ClCompile Include="OseloDisp.cpp">
+      <Filter>システム\オセロ</Filter>
+    </ClCompile>
+    <ClCompile Include="OseloETC.cpp">
+      <Filter>システム\オセロ</Filter>
+    </ClCompile>
+    <ClCompile Include="OseloGet.cpp">
+      <Filter>システム\オセロ</Filter>
+    </ClCompile>
+    <ClCompile Include="OseloPut.cpp">
+      <Filter>システム\オセロ</Filter>
+    </ClCompile>
+    <ClCompile Include="PutState.cpp">
+      <Filter>システム\状態</Filter>
+    </ClCompile>
+    <ClCompile Include="QAgent.cpp">
+      <Filter>システム\エージェント</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+﻿  コード生成しています。
+  All 2287 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+RandomerLib.lib(Randomer.obj) : warning LNK4099: PDB 'RandomerLib.pdb' が 'RandomerLib.lib(Randomer.obj)' で、または 'D:\Documents\GitHub\RLforOseloAI\Osero\Release\RandomerLib.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+RandomerLib.lib(stdafx.obj) : warning LNK4099: PDB 'RandomerLib.pdb' が 'RandomerLib.lib(stdafx.obj)' で、または 'D:\Documents\GitHub\RLforOseloAI\Osero\Release\RandomerLib.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+  OseloSystem.vcxproj -> D:\Documents\GitHub\RLforOseloAI\Osero\Release\OseloSystem.exe
