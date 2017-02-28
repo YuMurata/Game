@@ -2,18 +2,13 @@
 
 #include"BoardClass.h"
 
-
-
-using SA = std::pair<BoardClass, CellCoord>;
-
 template<>
-struct std::hash<SA>
+struct std::hash<BoardClass>
 {	
-	size_t operator()(const SA &sa) const
+	size_t operator()(const BoardClass &s) const
 	{	
-		auto board = sa.first.GetBoard();
-		const auto &coord = sa.second;
-			const int C = 997;
+		auto board = s.GetBoard();
+		const int C = 997;
 
 		auto func1 = [&C](const size_t &left, const int &right)
 		{
@@ -27,9 +22,20 @@ struct std::hash<SA>
 
 		auto ret=std::accumulate(begin(board), end(board), 0, func2);
 
-		ret = ret*C + coord.x;
-		ret = ret*C + coord.y;
-		
+		return ret;
+	}
+};
+
+template<>
+struct std::hash<CellCoord>
+{
+	size_t operator()(const CellCoord &a) const
+	{
+		const auto &coord = a;
+		const int C = 997;
+
+		auto ret = C*coord.x+coord.y;
+
 		return ret;
 	}
 };
