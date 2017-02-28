@@ -1,7 +1,6 @@
 #pragma once
 
 #include"BoardClass.h"
-#include<utility>
 
 class OseloClass
 {
@@ -10,7 +9,7 @@ private:
 	std::unique_ptr<Impl> pimpl;
 	
 public:
-	OseloClass(const CellNum &cell_num, const int &current_color);
+	OseloClass(const BoardClass::CellNum &cell_num, const int &current_color);
 	virtual ~OseloClass();
 
 	std::pair<PutState,PutState> Init();

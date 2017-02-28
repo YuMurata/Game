@@ -1,27 +1,23 @@
-#include"stdafx.h"
-
-#include"BoardClass.h"
-
-#include<algorithm>
+#include"BoardImpl.h"
 
 using namespace std;
 
 //”Õ–Ê‚Ì‘å‚«‚³‚ðŽæ“¾
-CellNum BoardClass::GetBoardSize()const
+BoardClass::CellNum BoardClass::GetBoardSize()const
 {
-	return this->board_size;
+	return this->pimpl->board_size;
 }
 
 //À•Wcoord‚Ìó‘Ô‚ðŽæ“¾
 int BoardClass::GetCellState(const CellCoord &coord)const
 {
-	return this->board[coord.y][coord.x];
+	return this->pimpl->board[coord.y][coord.x];
 }
 
 //Fcolor‚ÌÎ”‚ðŽæ“¾
 int BoardClass::GetCellNum(const int &color)const
 {
-	return this->cell_num[color];
+	return this->pimpl->cell_num[color];
 }
 
 //‘½‚¢‚Ù‚¤‚ÌF‚ðŽæ“¾
@@ -40,7 +36,7 @@ int BoardClass::GetOften()const
 	return ret;
 }
 
-Board BoardClass::GetBoard()const
+BoardClass::Board BoardClass::GetBoard()const
 {
-	return this->board;
+	return this->pimpl->board;
 }

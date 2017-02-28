@@ -1,18 +1,24 @@
-#include"BoardClass.h"
-#include<iterator>
-#include<algorithm>
+#include"BoardImpl.h"
 
 using namespace std;
 
+BoardClass::BoardClass()
+	:BoardClass(8) {}
+
 //cell_num‚Écell_num‚ğİ’è
 BoardClass::BoardClass(const CellNum &board_size)
-	:board_size(board_size),cell_num(BoardClass::Cell_NUM){}
+	:pimpl(new Impl(board_size)){}
+
+BoardClass::BoardClass(const BoardClass &board)
+	: pimpl(new Impl(*board.pimpl)) {}
+
+BoardClass::~BoardClass() = default;
 
 //”Õ–Ê‚Ì‰Šú‰»
 std::pair<PutState, PutState> BoardClass::Init()
 {
-	this->board = vector<vector<int>>(this->board_size.y, vector<int>(this->board_size.x, Cell_Empty));
-	auto mid = this->board_size / (CellCoord)2;
+	this->pimpl->board = vector<vector<int>>(this->pimpl->board_size.y, vector<int>(this->pimpl->board_size.x, Cell_Empty));
+	auto mid = this->pimpl->board_size / (CellCoord)2;
 
 	auto left_top = CellCoord(mid.x - 1, mid.y - 1);
 	auto right_top = CellCoord(mid.x, mid.y - 1);
@@ -36,25 +42,9 @@ std::pair<PutState, PutState> BoardClass::Init()
 	{
 		for (auto &j : i.flip)
 		{
-			this->PutPieceAt(j, i.color);
+			this->pimpl->PutPieceAt(j, i.color);
 		}
 	}
 
 	return ret;
-}
-
-ostream& operator<<(ostream &stream, const BoardClass &board)
-{
-	ostream_iterator<int> out(stream, ",");
-
-	auto board_mat=board.GetBoard();
-
-	auto func = [&out](const vector<int> &line)
-	{
-		copy(begin(line), end(line), out);
-	};
-
-	for_each(begin(board_mat), end(board_mat), func);
-
-	return stream;
 }

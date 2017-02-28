@@ -37,6 +37,9 @@
     <Filter Include="ハッシュ">
       <UniqueIdentifier>{4cce977f-d575-4d59-8e8c-1054986a1676}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ボード\Impl">
+      <UniqueIdentifier>{79e1c7ff-f67d-4890-b869-97b1c1e6d02f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -83,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="Hash.h">
       <Filter>ハッシュ</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardImpl.h">
+      <Filter>ボード\Impl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,15 @@
     </ClCompile>
     <ClCompile Include="Hash.cpp">
       <Filter>ハッシュ</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardImpl.cpp">
+      <Filter>ボード\Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardOperator.cpp">
+      <Filter>ボード</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardUndo.cpp">
+      <Filter>ボード</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

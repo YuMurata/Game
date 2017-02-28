@@ -19,3 +19,6 @@
 #include<iostream>
 #include<conio.h>
 #include<numeric>
+#include<stack>
+#include<iterator>
+#include<algorithm>
