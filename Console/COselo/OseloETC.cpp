@@ -1,15 +1,15 @@
-#include"stdafx.h"
-
-#include"OseloClass.h"
+#include"OseloImpl.h"
 #include"OseloSystem.h"
 
 OseloClass::OseloClass(const CellNum &cell_num, const int &current_turn)
-:board(cell_num), current_turn(current_turn), init_turn(current_turn) {}
+	:pimpl(new Impl(cell_num, current_turn)) {}
+
+OseloClass::~OseloClass() = default;
 
 //turn_color‚Ì”½“]
 void OseloClass::ChangeTurn()
 {
-	OseloSystem::ChangeTurn(&this->current_turn);
+	OseloSystem::ChangeTurn(&this->pimpl->current_turn);
 }
 
 //turn_color‚Ì”½“]

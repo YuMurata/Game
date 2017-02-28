@@ -31,6 +31,12 @@
     <Filter Include="エージェント\Impl">
       <UniqueIdentifier>{7f093013-b79f-411c-9c01-b9817af1b5d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="システム\Impl">
+      <UniqueIdentifier>{2549c883-3acc-4c77-ab6b-97fb82ee3bd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ハッシュ">
+      <UniqueIdentifier>{4cce977f-d575-4d59-8e8c-1054986a1676}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,13 +48,7 @@
     <ClInclude Include="targetver.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Hash.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="BaseAgent.h">
-      <Filter>エージェント</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseQ.h">
       <Filter>エージェント</Filter>
     </ClInclude>
     <ClInclude Include="BoardClass.h">
@@ -78,6 +78,12 @@
     <ClInclude Include="AgentImpl.h">
       <Filter>エージェント\Impl</Filter>
     </ClInclude>
+    <ClInclude Include="OseloImpl.h">
+      <Filter>システム\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="Hash.h">
+      <Filter>ハッシュ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,9 +91,6 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="AgentDisp.cpp">
-      <Filter>エージェント</Filter>
     </ClCompile>
     <ClCompile Include="AgentInit.cpp">
       <Filter>エージェント</Filter>
@@ -128,9 +131,6 @@
     <ClCompile Include="QAgentFile.cpp">
       <Filter>エージェント\Q</Filter>
     </ClCompile>
-    <ClCompile Include="QAgentPut.cpp">
-      <Filter>エージェント\Q</Filter>
-    </ClCompile>
     <ClCompile Include="QAgentInit.cpp">
       <Filter>エージェント\Q</Filter>
     </ClCompile>
@@ -145,6 +145,15 @@
     </ClCompile>
     <ClCompile Include="AgentImpl.cpp">
       <Filter>エージェント\Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="QAgentLearn.cpp">
+      <Filter>エージェント\Q</Filter>
+    </ClCompile>
+    <ClCompile Include="OseloImpl.cpp">
+      <Filter>システム\Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="Hash.cpp">
+      <Filter>ハッシュ</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

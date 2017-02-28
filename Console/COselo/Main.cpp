@@ -1,17 +1,12 @@
 // OseloSystem.cpp : コンソール アプリケーションのエントリ ポイントを定義します。
 //
 
-#include "stdafx.h"
-
 #include"OseloClass.h"
+
 #include"UserAgent.h"
 #include"RandomAgent.h"
 #include"QAgent.h"
 #include"QLTLAgent.h"
-
-#include<iostream>
-#include<conio.h>
-
 
 using namespace std;
 

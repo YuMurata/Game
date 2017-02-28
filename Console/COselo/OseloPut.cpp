@@ -1,16 +1,16 @@
-#include"OseloClass.h"
+#include"OseloImpl.h"
 #include"OseloSystem.h"
 
 using namespace std;
 
 pair<PutState,PutState>OseloClass::Init()
 {
-	return OseloSystem::Init(&this->board);
+	return OseloSystem::Init(&this->pimpl->board);
 }
 
 PutState OseloClass::Put(const CellCoord &coord)
 {
-	return OseloSystem::Put(&this->board, coord, this->current_turn);
+	return OseloSystem::Put(&this->pimpl->board, coord, this->pimpl->current_turn);
 }
 
 pair<PutState,PutState> OseloSystem::Init(BoardClass *board)

@@ -1,21 +1,21 @@
-#include"stdafx.h"
-
-#include"OseloClass.h"
+#include"OseloImpl.h"
 #include"OseloSystem.h"
+
+using namespace std;
 
 int OseloClass::GetCurrent()const
 {
-	return this->current_turn;
+	return this->pimpl->current_turn;
 }
 
 BoardClass OseloClass::GetBoard()const
 {
-	return this->board;
+	return this->pimpl->board;
 }
 
 int OseloClass::GetWin()const
 {
-	return OseloSystem::GetWin(this->board);
+	return OseloSystem::GetWin(this->pimpl->board);
 }
 
 BoardClass OseloSystem::GetEstimate(const BoardClass &board, const CellCoord &coord, const int &color)

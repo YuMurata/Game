@@ -1,18 +1,16 @@
-#include"stdafx.h"
-
-#include"OseloClass.h"
+#include"OseloImpl.h"
 #include"OseloSystem.h"
 
 //盤面に石を配置できる座標があればtrue
 bool OseloClass::CheckPutable()const
 {
-	return OseloSystem::CheckPutable(this->board, this->current_turn);
+	return OseloSystem::CheckPutable(this->pimpl->board, this->pimpl->current_turn);
 }
 
 //石を配置できる場所がない、もしくは配置された石の総数が盤面のサイズと等しければtrue
 bool OseloClass::CheckFinish()const
 {
-	return OseloSystem::CheckFinish(this->board);
+	return OseloSystem::CheckFinish(this->pimpl->board);
 }
 
 //座標[x,y]が盤面の中ならtrue

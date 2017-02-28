@@ -1,19 +1,17 @@
 #pragma once
 
-#include"stdafx.h"
-
 #include"BoardClass.h"
 #include<utility>
 
 class OseloClass
 {
 private:
-	BoardClass board;
-	int current_turn;
-	const int init_turn;
-
+	class Impl;
+	std::unique_ptr<Impl> pimpl;
+	
 public:
 	OseloClass(const CellNum &cell_num, const int &current_color);
+	virtual ~OseloClass();
 
 	std::pair<PutState,PutState> Init();
 

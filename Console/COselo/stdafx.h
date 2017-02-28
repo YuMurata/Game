@@ -13,3 +13,9 @@
 
 
 // TODO: プログラムに必要な追加ヘッダーをここで参照してください
+#include<memory>
+#include<vector>
+#include<utility>
+#include<iostream>
+#include<conio.h>
+#include<numeric>

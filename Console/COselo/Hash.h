@@ -1,9 +1,5 @@
 #pragma once
 
-#include"stdafx.h"
-
-#include<utility>
-#include<numeric>
 #include"BoardClass.h"
 
 

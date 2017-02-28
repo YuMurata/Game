@@ -1,20 +1,11 @@
 #pragma once
 
-#include"stdafx.h"
-
 #include"BoardClass.h"
-
-#include<utility>
-#include<iostream>
-#include<string>
-#include<algorithm>
-
-using namespace std;
 
 class OseloSystem
 {
 public:
-	using Flip = vector<CellCoord>;
+	using Flip = std::vector<CellCoord>;
 
 public:
 //Check
@@ -69,7 +60,7 @@ public:
 
 	static BoardClass GetEstimate(const BoardClass &board, const CellCoord &coord, const int &color);
 	
-	static vector<CellCoord> GetPutable(const BoardClass& board, const int &color);
+	static std::vector<CellCoord> GetPutable(const BoardClass& board, const int &color);
 
 	static int GetWin(const BoardClass &board);
 

@@ -1,9 +1,9 @@
+#include"OseloImpl.h"
 #include"OseloSystem.h"
-#include"OseloClass.h"
 
 PutState OseloClass::Undo()
 {
-	auto state=OseloSystem::Undo(&this->board);
+	auto state=OseloSystem::Undo(&this->pimpl->board);
 	this->ChangeTurn();
 	if (!this->CheckPutable())
 	{
@@ -15,7 +15,7 @@ PutState OseloClass::Undo()
 
 bool OseloClass::Redo()
 {
-	return OseloSystem::Redo(&this->board);
+	return OseloSystem::Redo(&this->pimpl->board);
 }
 
 PutState OseloSystem::Undo(BoardClass *board)

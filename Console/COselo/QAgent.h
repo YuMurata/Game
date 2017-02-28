@@ -15,6 +15,8 @@ public:
 	QAgent(const std::shared_ptr<OseloClass> &obj, const int &color);
 	virtual ~QAgent();
 
+	void Review(const CellCoord &coord);
+
 	void LoadFile(const std::string &file_name);
 
 	void WriteFile(const std::string &file_name);

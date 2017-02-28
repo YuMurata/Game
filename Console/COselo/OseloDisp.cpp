@@ -1,7 +1,4 @@
-#include"stdafx.h"
-
-#include"OseloClass.h"
-
+#include"OseloImpl.h"
 #include"OseloSystem.h"
 
 using namespace std;
@@ -9,7 +6,7 @@ using namespace std;
 //”Õ–Ê‚Ì•`‰æ
 void OseloClass::DrawBoard()const
 {
-	OseloSystem::DrawBoard(this->board);
+	OseloSystem::DrawBoard(this->pimpl->board);
 }
 
 //”Õ–Ê‚Ì•`‰æ
@@ -20,7 +17,7 @@ void OseloSystem::DrawBoard(const BoardClass &board)
 		" ","›","œ",
 	};
 
-	const string line = "------------------";
+	const char line[] = "------------------";
 
 	cout << endl << line << line << endl << endl;
 
@@ -66,7 +63,7 @@ void OseloSystem::DispCells(const int &black_count, const int &white_count)
 //Î‚ğ”z’u‚Å‚«‚È‚¢ê‡‚ÉŒÄ‚Ño‚·
 void OseloSystem::Pass(const int &color)
 {
-	const string turn_color[] =
+	const char *turn_color[] =
 	{
 		"BLACK",
 		"WHITE",
