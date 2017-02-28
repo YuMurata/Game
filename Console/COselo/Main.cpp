@@ -14,20 +14,22 @@ int main()
 {
 	shared_ptr<OseloClass> obj(new OseloClass(8, BoardClass::Cell_BLACK));
 
-	unique_ptr<QLTLAgent> black(new QLTLAgent(obj, BoardClass::Cell_BLACK,64));
-	unique_ptr<QAgent> white(new QAgent(obj, BoardClass::Cell_WHITE));
+	unique_ptr<QAgent> black(new QAgent(obj, BoardClass::Cell_BLACK));
+	unique_ptr<RandomAgent> white(new RandomAgent(obj, BoardClass::Cell_WHITE));
 
-
-	black->LoadFile("black.ql");
-	white->LoadFile("white.ql");
+	//black->LoadFile("black.ql");
+	//white->LoadFile("white.ql");
 
 	unique_ptr<BaseAgent> agents[BoardClass::Cell_NUM];
 	
 	agents[black->GetColor()] = move(black);
 	agents[white->GetColor()] = move(white);
 	
-	int win_count[BoardClass::Cell_NUM+1] = { 0 };
-	for (int i = 0; i < 10; ++i)
+	ofstream ofs("QAgent_win.xls");
+
+	//int win_count[BoardClass::Cell_NUM+1] = { 0 };
+	int win_count = 0;
+	for (int i = 1; i <= 100; ++i)
 	{
 		obj->Init();
 		obj->DrawBoard();
@@ -45,11 +47,15 @@ int main()
 
 			obj->DrawBoard();
 		}
-
+		if (obj->GetWin() == BoardClass::Cell_BLACK)
+		{
+			++win_count;
+		}
+		ofs << i << "\t" << 1.*i / win_count << endl;
 		cout << i << endl;
 
 		BaseAgent::win = obj->GetWin();
-		++win_count[BaseAgent::win+1];
+		//++win_count[BaseAgent::win+1];
 		
 		PutState state;
 
@@ -61,10 +67,10 @@ int main()
 		BaseAgent::win = BoardClass::Cell_Empty;
 	}
 
-	dynamic_cast<QLTLAgent*>(agents[0].get())->WriteFile(("black.ql"));
-	dynamic_cast<QAgent*>(agents[1].get())->WriteFile(("white.ql"));
+	//dynamic_cast<QLTLAgent*>(agents[0].get())->WriteFile(("black.ql"));
+	//dynamic_cast<QAgent*>(agents[1].get())->WriteFile(("white.ql"));
 
-	cout << win_count[BoardClass::Cell_BLACK+1] << ":" << win_count[BoardClass::Cell_WHITE+1] << ":" << win_count[BoardClass::Cell_Empty + 1]<< endl;
+	//cout << win_count[BoardClass::Cell_BLACK+1] << ":" << win_count[BoardClass::Cell_WHITE+1] << ":" << win_count[BoardClass::Cell_Empty + 1]<< endl;
 
 #ifndef NDEBUG
 	_getch();
