@@ -11,4 +11,3 @@ void BaseAgent::Impl::DispTurn()const
 
 	cout << typeid(*this).name() << ":" << turn[this->my_color] << endl;
 }
-
