@@ -28,6 +28,9 @@
     <Filter Include="エージェント\Q">
       <UniqueIdentifier>{1e15e0e0-a969-425e-99a8-59b691bdb217}</UniqueIdentifier>
     </Filter>
+    <Filter Include="エージェント\Impl">
+      <UniqueIdentifier>{7f093013-b79f-411c-9c01-b9817af1b5d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -73,7 +76,7 @@
       <Filter>エージェント\Q</Filter>
     </ClInclude>
     <ClInclude Include="AgentImpl.h">
-      <Filter>エージェント</Filter>
+      <Filter>エージェント\Impl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -131,8 +134,17 @@
     <ClCompile Include="QAgentInit.cpp">
       <Filter>エージェント\Q</Filter>
     </ClCompile>
+    <ClCompile Include="QLTLFile.cpp">
+      <Filter>エージェント\Q</Filter>
+    </ClCompile>
+    <ClCompile Include="QLTLLearn.cpp">
+      <Filter>エージェント\Q</Filter>
+    </ClCompile>
+    <ClCompile Include="QLTLInit.cpp">
+      <Filter>エージェント\Q</Filter>
+    </ClCompile>
     <ClCompile Include="AgentImpl.cpp">
-      <Filter>エージェント</Filter>
+      <Filter>エージェント\Impl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

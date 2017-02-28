@@ -1,3 +1,4 @@
+#include"AgentImpl.h"
 #include"BaseAgent.h"
 #include"UserAgent.h"
 #include"RandomAgent.h"
@@ -15,7 +16,9 @@ using namespace std;
 
 //oselo‚Éobj,my_color‚Écolor‚ğİ’è
 BaseAgent::BaseAgent(const shared_ptr<OseloClass> &obj, const int &color)
-	:oselo(obj), my_color(color) {}
+	:base_pimpl(new Impl(obj,color)) {}
+
+BaseAgent::~BaseAgent() = default;
 
 //oselo‚Éobj,my_color‚Écolor‚ğİ’è
 UserAgent::UserAgent(const shared_ptr<OseloClass> &obj, const int &color)

@@ -3,7 +3,6 @@
 #include"stdafx.h"
 
 #include"BoardClass.h"
-#include"PutState.h"
 #include<utility>
 
 class OseloClass

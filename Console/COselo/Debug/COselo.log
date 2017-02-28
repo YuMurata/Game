@@ -1,2 +1,101 @@
-﻿  OseloPut.cpp
+﻿  QLTLInit.cpp
+d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(146): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(133): note: クラス テンプレート のメンバー関数 'std::unordered_set<const std::vector<int,std::allocator<_Ty>> *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<_Kty>> LSH::LSHClass<DataType>::query(const std::vector<_Ty,std::allocator<_Ty>> &) const' のコンパイル中
+          with
+          [
+              _Ty=int,
+              _Kty=const std::vector<int,std::allocator<int>> *,
+              DataType=QLTLAgent::Impl::DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(42): note: コンパイル対象の関数 テンプレート インスタンス化 'std::unordered_set<const std::vector<int,std::allocator<_Ty>> *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<_Kty>> LSH::LSHClass<DataType>::query(const std::vector<_Ty,std::allocator<_Ty>> &) const' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              _Kty=const std::vector<int,std::allocator<int>> *,
+              DataType=QLTLAgent::Impl::DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(23): note: コンパイル対象のクラス テンプレート インスタンス化 'LSH::LSHClass<DataType>' のリファレンスを確認してください
+          with
+          [
+              DataType=QLTLAgent::Impl::DataType
+          ]
+  d:\documents\github\game\console\coselo\agentimpl.h(40): note: コンパイル対象のクラス テンプレート インスタンス化 'QLTLClass<QLTLAgent::Impl::S,QLTLAgent::Impl::A,QLTLAgent::Impl::DataType>' のリファレンスを確認してください
+c:\program files\microsoft visual studio 14.0\vc\include\numeric(20): warning C4244: '引数': 'double' から 'const int' への変換です。データが失われる可能性があります。
+  c:\program files\microsoft visual studio 14.0\vc\include\numeric(30): note: コンパイル対象の関数 テンプレート インスタンス化 '_Ty std::_Accumulate<double*,_Ty,_Fn2>(_InIt,_InIt,_Ty,_Fn2)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              _Fn2=MathPlus::Distance::Distance::<lambda_da435b4cd3ae5994e97dc4040d425beb>,
+              _InIt=double *
+          ]
+  d:\documents\github\mylib\librarymaker\mathplus\mathplus.h(41): note: コンパイル対象の関数 テンプレート インスタンス化 '_Ty std::accumulate<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,T,MathPlus::Distance::Distance::<lambda_da435b4cd3ae5994e97dc4040d425beb>>(_InIt,_InIt,_Ty,_Fn2)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              T=int,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,
+              _Fn2=MathPlus::Distance::Distance::<lambda_da435b4cd3ae5994e97dc4040d425beb>
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(66): note: コンパイル対象の関数 テンプレート インスタンス化 'double MathPlus::Distance::Distance<int>(const std::vector<int,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,const int &)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(39): note: クラス テンプレート のメンバー関数 'void QLTLClass<QLTLAgent::Impl::S,QLTLAgent::Impl::A,QLTLAgent::Impl::DataType>::QUpDate(const S &,const A &)' のコンパイル中
+          with
+          [
+              S=QLTLAgent::Impl::S,
+              A=QLTLAgent::Impl::A
+          ]
+  QAgentPut.cpp
+d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(146): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(133): note: クラス テンプレート のメンバー関数 'std::unordered_set<const std::vector<int,std::allocator<_Ty>> *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<_Kty>> LSH::LSHClass<DataType>::query(const std::vector<_Ty,std::allocator<_Ty>> &) const' のコンパイル中
+          with
+          [
+              _Ty=int,
+              _Kty=const std::vector<int,std::allocator<int>> *,
+              DataType=QLTLAgent::Impl::DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(42): note: コンパイル対象の関数 テンプレート インスタンス化 'std::unordered_set<const std::vector<int,std::allocator<_Ty>> *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<_Kty>> LSH::LSHClass<DataType>::query(const std::vector<_Ty,std::allocator<_Ty>> &) const' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              _Kty=const std::vector<int,std::allocator<int>> *,
+              DataType=QLTLAgent::Impl::DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(23): note: コンパイル対象のクラス テンプレート インスタンス化 'LSH::LSHClass<DataType>' のリファレンスを確認してください
+          with
+          [
+              DataType=QLTLAgent::Impl::DataType
+          ]
+  d:\documents\github\game\console\coselo\agentimpl.h(40): note: コンパイル対象のクラス テンプレート インスタンス化 'QLTLClass<QLTLAgent::Impl::S,QLTLAgent::Impl::A,QLTLAgent::Impl::DataType>' のリファレンスを確認してください
+c:\program files\microsoft visual studio 14.0\vc\include\numeric(20): warning C4244: '引数': 'double' から 'const int' への変換です。データが失われる可能性があります。
+  c:\program files\microsoft visual studio 14.0\vc\include\numeric(30): note: コンパイル対象の関数 テンプレート インスタンス化 '_Ty std::_Accumulate<double*,_Ty,_Fn2>(_InIt,_InIt,_Ty,_Fn2)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              _Fn2=MathPlus::Distance::Distance::<lambda_3ea88a11b8a0a951b248eda3b8092d46>,
+              _InIt=double *
+          ]
+  d:\documents\github\mylib\librarymaker\mathplus\mathplus.h(41): note: コンパイル対象の関数 テンプレート インスタンス化 '_Ty std::accumulate<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,T,MathPlus::Distance::Distance::<lambda_3ea88a11b8a0a951b248eda3b8092d46>>(_InIt,_InIt,_Ty,_Fn2)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              T=int,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,
+              _Fn2=MathPlus::Distance::Distance::<lambda_3ea88a11b8a0a951b248eda3b8092d46>
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(66): note: コンパイル対象の関数 テンプレート インスタンス化 'double MathPlus::Distance::Distance<int>(const std::vector<int,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,const int &)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(39): note: クラス テンプレート のメンバー関数 'void QLTLClass<QLTLAgent::Impl::S,QLTLAgent::Impl::A,QLTLAgent::Impl::DataType>::QUpDate(const S &,const A &)' のコンパイル中
+          with
+          [
+              S=QLTLAgent::Impl::S,
+              A=QLTLAgent::Impl::A
+          ]
+  コードを生成中...
+  LINK : 前回のインクリメンタル リンクで D:\Documents\GitHub\Game\Console\Debug\COselo.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   COselo.vcxproj -> D:\Documents\GitHub\Game\Console\Debug\COselo.exe

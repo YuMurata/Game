@@ -7,7 +7,7 @@
 #include<vector>
 #include<functional>
 
-typedef TCoordinate<int> CellCoord;
+using CellCoord = TCoordinate<int>;
 
 class PutState
 {

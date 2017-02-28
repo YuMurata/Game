@@ -1,3 +1,5 @@
+#pragma once
+
 #include"../../MachineLearning/ReinforcementLearning/QLearning/QLearning/QLClass.h"
 
 #include"BaseAgent.h"
@@ -10,12 +12,13 @@ class QAgent :public BaseAgent
 {
 private:
 	class Impl;
-	unique_ptr<Impl> pimpl;
+	unique_ptr<Impl> q_pimpl;
 	
 public:
 	void Put();
 
 	QAgent(const shared_ptr<OseloClass> &obj, const int &color);
+	virtual ~QAgent();
 
 	void LoadFile(const string &file_name);
 

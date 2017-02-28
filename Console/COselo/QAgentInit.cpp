@@ -1,9 +1,8 @@
-#include"QAgent.h"
+#include"AgentImpl.h"
 #include<algorithm>
-#include"Impl.h"
 
 QAgent::QAgent(const shared_ptr<OseloClass> &obj, const int &color)
-	: BaseAgent(obj, color),pimpl(new Impl)
+	: BaseAgent(obj, color),q_pimpl(new Impl)
 {
 	using S = BoardClass;
 	using A = CellCoord;
@@ -24,10 +23,10 @@ QAgent::QAgent(const shared_ptr<OseloClass> &obj, const int &color)
 	auto func_r = [&](const S &s)
 	{
 		int ampl = 1;
-		int reward = s.GetCellNum(this->my_color);
+		int reward = s.GetCellNum(this->base_pimpl->my_color);
 
 
-		if (this->win == this->my_color)
+		if (this->win == this->base_pimpl->my_color)
 		{
 			ampl = 10;
 		}
@@ -46,13 +45,13 @@ QAgent::QAgent(const shared_ptr<OseloClass> &obj, const int &color)
 
 	T func_t = [&](const S &s, const A &a)
 	{
-		auto ret = OseloSystem::GetEstimate(s, a, this->my_color);
+		auto ret = OseloSystem::GetEstimate(s, a, this->base_pimpl->my_color);
 		return ret;
 	};
 
 	As func_as = [&](const S &s)
 	{
-		auto ret = OseloSystem::GetPutable(s, this->my_color);
+		auto ret = OseloSystem::GetPutable(s, this->base_pimpl->my_color);
 		return ret;
 	};
 
@@ -60,7 +59,7 @@ QAgent::QAgent(const shared_ptr<OseloClass> &obj, const int &color)
 	{
 		vector<SAQ> ret(size(data_list));
 
-		auto board_size = this->oselo->GetBoard().GetBoardSize();
+		auto board_size = this->base_pimpl->oselo->GetBoard().GetBoardSize();
 
 		auto s_size = board_size.x*board_size.y;
 		auto a_size = 2;
@@ -131,5 +130,7 @@ QAgent::QAgent(const shared_ptr<OseloClass> &obj, const int &color)
 		//return ret;
 	};
 
-	this->pimpl->ql_obj.SetFunc(func_r, func_t, func_as, func_load, func_write);
+	this->q_pimpl->ql_obj.SetFunc(func_r, func_t, func_as, func_load, func_write);
 }
+
+QAgent::~QAgent() = default;

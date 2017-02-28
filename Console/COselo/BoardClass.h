@@ -10,8 +10,8 @@
 
 #include"PutState.h"
 
-typedef TCoordinate<int> CellNum;
-typedef TCoordinate<int> CellCoord;
+using CellNum = TCoordinate<int>;
+using CellCoord = TCoordinate<int>;
 
 using Board = std::vector<std::vector<int>>;
 using State = std::vector<std::pair<CellCoord, int>>;
