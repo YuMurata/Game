@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BaseObject.cpp" />
+    <ClCompile Include="CellClass.cpp" />
+    <ClCompile Include="CellMGR.cpp" />
+    <ClCompile Include="CellPut.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectMGR.cpp" />
+    <ClCompile Include="OseloObject.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BackGroundClass.h" />
+    <ClInclude Include="BaseObject.h" />
+    <ClInclude Include="BoardInfo.h" />
+    <ClInclude Include="CellClass.h" />
+    <ClInclude Include="CellMGR.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectMGR.h" />
+    <ClInclude Include="OseloObject.h" />
+    <ClInclude Include="Osero.h" />
+    <ClInclude Include="RateClass.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>
