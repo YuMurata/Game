@@ -1,16 +1,15 @@
 #pragma once
 #include"BaseAgent.h"
-#include"OseloSystem.h"
-#include<StringPlus.h>
+#include<string>
 
 class QLTLAgent :public BaseAgent 
 {
 private:
 	class Impl;
-	unique_ptr<Impl> qltl_pimpl;
+	std::unique_ptr<Impl> qltl_pimpl;
 
 public:
-	QLTLAgent(const shared_ptr<OseloClass> &obj, const int &color, const int &cell_num, const bool &learn_flag = true);
+	QLTLAgent(const std::shared_ptr<OseloClass> &obj, const int &color, const int &cell_num, const bool &learn_flag = true);
 
 	virtual ~QLTLAgent();
 
@@ -18,7 +17,7 @@ public:
 
 	void Review(const CellCoord &coord);
 
-	void LoadFile(const string &file_name);
+	void LoadFile(const std::string &file_name);
 
-	void WriteFile(const string &file_name);
+	void WriteFile(const std:: string &file_name);
 };

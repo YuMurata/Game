@@ -1,5 +1,8 @@
 #include"AgentImpl.h"
+#include"OseloSystem.h"
+
 #include<algorithm>
+#include<StringPlus.h>
 
 QAgent::QAgent(const shared_ptr<OseloClass> &obj, const int &color)
 	: BaseAgent(obj, color),q_pimpl(new Impl)

@@ -6,6 +6,8 @@
 
 #include"OseloClass.h"
 
+#include"Hash.h"
+
 #include"../../MachineLearning/ReinforcementLearning/QLearning/QLearning/QLClass.h"
 #include"../../MachineLearning/ReinforcementLearning/QLearning/QLTL/QLTLClass.h"
 #include<memory>

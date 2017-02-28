@@ -9,5 +9,5 @@ public:
 	UserAgent(const std::shared_ptr<OseloClass> &obj, const int &color);
 
 	//ƒ†[ƒU‚ªÎ‚ğ’u‚­
-	virtual void Put();
+	void Put();
 };
