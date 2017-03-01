@@ -1,6 +1,5 @@
 // OseloSystem.cpp : コンソール アプリケーションのエントリ ポイントを定義します。
 //
-
 #include"OseloClass.h"
 
 #include"UserAgent.h"
@@ -10,26 +9,87 @@
 
 using namespace std;
 
+struct WinRate
+{
+	int game_count;
+	vector<double> win_rate;
+
+	WinRate(const int &game_count, const vector<double> rate)
+		:game_count(game_count), win_rate(rate) {}
+};
+
+struct BaseVS
+{
+	vector<WinRate> data;
+	int win_count[BoardClass::Cell_NUM];
+	
+	void Add(const int &game_count)
+	{
+		vector<double> rate({ 1.*win_count[BoardClass::Cell_BLACK] / game_count,1.*win_count[BoardClass::Cell_WHITE] / game_count });
+		this->data.push_back(WinRate(game_count, rate));
+	}
+
+	virtual void Write(const string &file_name) = 0;
+};
+
+struct VSRandom:public BaseVS
+{
+	void Write(const string &file_name)
+	{
+		ofstream ofs(file_name);
+
+		auto func = [&ofs](const WinRate &x)
+		{
+			ofs << x.game_count << "\t" << x.win_rate[BoardClass::Cell_BLACK] << endl;
+		};
+
+		for_each(begin(data), end(data), func);
+	}
+};
+
+struct VSRL:public BaseVS
+{
+	void Write(const string &file_name)
+	{
+		ofstream ofs(file_name);
+
+		auto func = [&ofs](const WinRate &x)
+		{
+			ofs << x.game_count << "\t" << x.win_rate[BoardClass::Cell_BLACK] << "\t" << x.win_rate[BoardClass::Cell_WHITE] << endl;
+		};
+
+		for_each(begin(data), end(data), func);
+	}
+};
+
 int main()
 {
 	shared_ptr<OseloClass> obj(new OseloClass(8, BoardClass::Cell_BLACK));
 
-	unique_ptr<QAgent> black(new QAgent(obj, BoardClass::Cell_BLACK));
-	unique_ptr<RandomAgent> white(new RandomAgent(obj, BoardClass::Cell_WHITE));
+	unique_ptr<QLTLAgent> black(new QLTLAgent(obj, BoardClass::Cell_BLACK, 64));
+	//unique_ptr<QAgent> black(new QAgent(obj, BoardClass::Cell_BLACK));
+	//unique_ptr<RandomAgent> white(new RandomAgent(obj, BoardClass::Cell_WHITE));
+	unique_ptr<QAgent> white(new QAgent(obj, BoardClass::Cell_WHITE));
 
 	//black->LoadFile("black.ql");
 	//white->LoadFile("white.ql");
 
 	unique_ptr<BaseAgent> agents[BoardClass::Cell_NUM];
-	
+
 	agents[black->GetColor()] = move(black);
 	agents[white->GetColor()] = move(white);
-	
-	ofstream ofs("QAgent_win.xls");
 
-	//int win_count[BoardClass::Cell_NUM+1] = { 0 };
-	int win_count = 0;
-	for (int i = 1; i <= 100; ++i)
+	const int learn_num = 100;
+	
+	unique_ptr<BaseVS> writer(new VSRandom);
+	
+	if (typeid(*agents[1]) != typeid(RandomAgent))
+	{
+		writer.reset(new VSRL);
+	}
+
+
+	for (int i = 1; i <= learn_num; ++i)
 	{
 		obj->Init();
 		obj->DrawBoard();
@@ -47,19 +107,20 @@ int main()
 
 			obj->DrawBoard();
 		}
-		if (obj->GetWin() == BoardClass::Cell_BLACK)
-		{
-			++win_count;
-		}
-		ofs << i << "\t" << 1.*i / win_count << endl;
-		cout << i << endl;
 
 		BaseAgent::win = obj->GetWin();
-		//++win_count[BaseAgent::win+1];
-		
+		if (BaseAgent::win != BoardClass::Cell_Empty)
+		{
+			++writer->win_count[BaseAgent::win];
+		}
+
+		writer->Add(i);
+
+		cout << i << endl;
+
 		PutState state;
 
-		while ((state=obj->Undo()).IsPut())
+		while ((state = obj->Undo()).IsPut())
 		{
 			agents[obj->GetCurrent()]->Review(state.put);
 			obj->DrawBoard();
@@ -71,6 +132,19 @@ int main()
 	//dynamic_cast<QAgent*>(agents[1].get())->WriteFile(("white.ql"));
 
 	//cout << win_count[BoardClass::Cell_BLACK+1] << ":" << win_count[BoardClass::Cell_WHITE+1] << ":" << win_count[BoardClass::Cell_Empty + 1]<< endl;
+
+	string file_name;
+
+	if (typeid(*writer) == typeid(VSRandom))
+	{
+		file_name = typeid(*agents[0]).name() + string("_win.xls");
+	}
+	else
+	{
+		file_name = "qltl_vs_q.xls";
+	}
+
+	writer->Write(file_name);
 
 #ifndef NDEBUG
 	_getch();

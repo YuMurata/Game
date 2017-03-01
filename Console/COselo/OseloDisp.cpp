@@ -1,6 +1,8 @@
 #include"OseloImpl.h"
 #include"OseloSystem.h"
 
+#include"Define.h"
+
 using namespace std;
 
 //î’ñ ÇÃï`âÊ
@@ -12,6 +14,8 @@ void OseloClass::DrawBoard()const
 //î’ñ ÇÃï`âÊ
 void OseloSystem::DrawBoard(const BoardClass &board)
 {
+#ifndef NO_DISP
+
 	const char *cell[] =
 	{
 		"Å†","Åõ","Åú",
@@ -51,6 +55,7 @@ void OseloSystem::DrawBoard(const BoardClass &board)
 
 	cout << endl << line << line << endl << endl;
 
+#endif
 }
 
 //êŒÇÃêîÇï\é¶

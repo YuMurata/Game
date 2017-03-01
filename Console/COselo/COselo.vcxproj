@@ -156,6 +156,7 @@
     <ClInclude Include="BaseAgent.h" />
     <ClInclude Include="BoardClass.h" />
     <ClInclude Include="BoardImpl.h" />
+    <ClInclude Include="Define.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="OseloClass.h" />
     <ClInclude Include="OseloImpl.h" />
